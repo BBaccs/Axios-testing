@@ -23,12 +23,16 @@
         const film = res.data.results;
 	    // for(let film of res.data.results) {
 		//     console.log(film)
+        // for (let key in film) {
+        //     console.log(`${key}: ${film[key]}`);
+        //   }
  		// }
+
         for (let i = 0; i < film.length; i++) {
-            const allFilms = film[i];
-            // console.log(allFilms);
-            for (let key in allFilms) {
-                console.log(`${key}: ${allFilms[key]}`);
+            const aFilm = film[i];
+            for (let key in aFilm) {
+                console.log(film, film[0], key);
+                console.log(`${key}: ${aFilm[key]}`);
               }
         }
 	})
