@@ -1,20 +1,42 @@
-axios
-	.get('https://swapi.dev/api/')
+// axios
+// 	.get('https://swapi.dev/api/')
+// 	.then((res) => {
+// 		const url = res.data.people;
+// 		axios
+// 			.get(url)
+// 			.then((res) => {
+// 				console.log(res.data.results[0])
+// 				for(let person of res.data.results) {
+// 					console.log(`My name is ${person.name}, and my height is ${person.height} cm`)
+// 				}
+// 			})
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
+
+
+    axios
+	.get('https://swapi.dev/api/films/')
 	.then((res) => {
-		const url = res.data.people;
-		axios
-			.get(url)
-			.then((res) => {
-				console.log(res.data.results[0])
-				for(let person of res.data.results) {
-					console.log(`My name is ${person.name}, and my height is ${person.height} cm`)
-				}
-			})
+        // console.log(res.data.results)
+        const film = res.data.results;
+	    // for(let film of res.data.results) {
+		//     console.log(film)
+ 		// }
+        for (let i = 0; i < film.length; i++) {
+            const allFilms = film[i];
+            // console.log(allFilms);
+            for (let key in allFilms) {
+                console.log(`${key}: ${allFilms[key]}`);
+              }
+        }
 	})
 	.catch((err) => {
-		console.log('IN CATCH CALLBACK!');
 		console.log(err);
 	});
+
+
 
 
 
