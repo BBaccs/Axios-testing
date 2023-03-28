@@ -19,19 +19,11 @@
     axios
 	.get('https://swapi.dev/api/films/')
 	.then((res) => {
-        // console.log(res.data.results)
         const film = res.data.results;
-	    // for(let film of res.data.results) {
-		//     console.log(film)
-        // for (let key in film) {
-        //     console.log(`${key}: ${film[key]}`);
-        //   }
- 		// }
-
         for (let i = 0; i < film.length; i++) {
             const aFilm = film[i];
             for (let key in aFilm) {
-                console.log(film, film[0], key);
+                // console.log(film, film[0], key);
                 console.log(`${key}: ${aFilm[key]}`);
               }
         }
