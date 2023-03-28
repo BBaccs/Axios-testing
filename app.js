@@ -1,20 +1,20 @@
-// axios
-// 	.get('https://swapi.dev/api/')
-// 	.then((res) => {
-// 		const url = res.data.people;
-// 		axios
-// 			.get(url)
-// 			.then((res) => {
-// 				console.log(res.data.results[0])
-// 				for(let person of res.data.results) {
-// 					console.log(`My name is ${person.name}, and my height is ${person.height} cm`)
-// 				}
-// 			})
-// 	})
-// 	.catch((err) => {
-// 		console.log('IN CATCH CALLBACK!');
-// 		console.log(err);
-// 	});
+axios
+	.get('https://swapi.dev/api/')
+	.then((res) => {
+		const url = res.data.people;
+		axios
+			.get(url)
+			.then((res) => {
+				console.log(res.data.results[0])
+				for(let person of res.data.results) {
+					console.log(`My name is ${person.name}, and my height is ${person.height} cm`)
+				}
+			})
+	})
+	.catch((err) => {
+		console.log('IN CATCH CALLBACK!');
+		console.log(err);
+	});
 
 
 
