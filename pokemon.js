@@ -42,3 +42,31 @@ async function get3Pokemon() {
 get3Pokemon().catch((e) => {
     console.log(e);
 })
+
+
+
+
+
+
+// Parallel
+// Promise.all (accepts an array of promises)
+async function get3Pokemon() {
+    const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1');
+    const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2');
+    const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3');
+
+    // This returns a promise that is resolved when
+    // All of the promises in teh array are resolved
+    const results = await Promise.all([prom1, prom2, prom3]);
+    printPokemon(results);
+}
+
+function printPokemon(results) {
+    for(let pokemon of results) {
+        console.log(pokemon.data.name)
+    }
+}
+
+get3Pokemon().catch((e) => {
+    console.log(e);
+})
